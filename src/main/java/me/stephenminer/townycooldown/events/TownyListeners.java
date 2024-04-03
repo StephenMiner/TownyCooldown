@@ -1,9 +1,7 @@
 package me.stephenminer.townycooldown.events;
 
 import com.palmergames.bukkit.towny.event.TownAddResidentEvent;
-import com.palmergames.bukkit.towny.event.TownPreAddResidentEvent;
 import me.stephenminer.townycooldown.TownyCooldown;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -35,7 +33,6 @@ public class TownyListeners implements Listener {
     public void callJoinCmd(PlayerCommandPreprocessEvent event){
         String msg = event.getMessage();
         int index = msg.indexOf(" ");
-        System.out.println(msg);
         if (index > 0) msg = msg.substring(0, index);
         if (msg.equalsIgnoreCase("/accept") || msg.equalsIgnoreCase("/towny:accept")){
             Player player = event.getPlayer();
